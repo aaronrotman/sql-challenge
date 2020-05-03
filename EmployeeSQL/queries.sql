@@ -21,6 +21,12 @@ ON dept_manager.dept_no=departments.dept_no
 
 -- 4. List the department of each employee with the following information: 
 -- Employee number, last name, first name, and department name.
+SELECT employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
+FROM departments
+JOIN dept_emp
+ON dept_emp.dept_no=departments.dept_no
+	JOIN employees
+	ON employees.emp_no=dept_emp.emp_no
 
 -- 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 SELECT first_name, last_name, sex
